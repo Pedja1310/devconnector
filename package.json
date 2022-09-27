@@ -9,7 +9,9 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "test": "snyk test"
+    "test": "snyk test",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,15 +27,17 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.1.0",
     "express": "^4.17.1",
-    "express-validator": "^6.1.1",
-    "gravatar": "^1.8.0",
+    "express-validator": "^6.5.0",
+    "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.6.5",
-    "request": "^2.88.0"
+    "mongoose": "^5.13.15",
+    "request": "^2.88.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
     "nodemon": "^1.19.1",
-    "snyk": "^1.193.3"
-  }
+    "snyk": "^1.1013.0"
+  },
+  "snyk": true
 }
